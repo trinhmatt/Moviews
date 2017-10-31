@@ -3,7 +3,10 @@
   <div class='row'>
     <div class='col-lg-4'>
       <h1>Homepage</h1>
-      <a href='/logout'>Log out</a>
+      <form method='POST' action='/search'>
+        <input type='text' placeholder="Search for movie" name='movie'></input>
+        <button class='btn btn-primary btn-sm'>Search</button>
+      </form>
     </div>
   </div>
 </div>

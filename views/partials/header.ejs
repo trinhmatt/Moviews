@@ -12,3 +12,25 @@
   <link rel='stylesheet' type='text/css' href='/css/styles.css'></link>
   </head>
   <body>
+    <nav class='navbar navbar-default'>
+      <div class='navbar-header'>
+        <a class='navbar-brand' href='/home'>Moviews</a>
+      </div>
+      <% if (!currentUser) { %>
+        <div class='navbar-item auth'>
+          <a class='nav-link' href='/register'>Sign Up</a>
+        </div>
+        <div class='navbar-item auth'>
+          <a class='nav-link' href='/'>Login</a>
+        </div>
+      <% } else { %>
+        <div class='navbar-item auth'>
+          <a class='nav-link' href='/logout'>Logout</a>
+        </div>
+        <div class='navbar-item auth'>
+          <a class='nav-link' href='/home/<%= currentUser._id %>'>
+            <%= currentUser.username %>
+          </a>
+        </div>
+      <% } %>
+    </nav>

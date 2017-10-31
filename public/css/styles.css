@@ -1,3 +1,10 @@
-body {
-  background-color: pink;
+.navbar-item.auth {
+    float: right;
+    padding: 15px;
+}
+
+#login {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
 }
