@@ -4,7 +4,8 @@ var listSchema = new mongoose.Schema({
   movies: [
     {
       title: String,
-      poster: String
+      poster: String,
+      rating: String
     }
   ],
   owner: {

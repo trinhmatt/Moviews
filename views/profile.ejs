@@ -1,10 +1,23 @@
 <% include partials/header %>
 <div class='container'>
   <h1><%= user.username %></h1>
-  <ul>
-    <% for (i=0; i<list.movies.length; i++) { %>
-      <li><%= list.movies[i].title %></li>
-    <% } %>
-  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>
+          Title
+        </th>
+        <th>
+          Rating
+        </th>
+      </tr>
+      <% for (i=0; i<list.movies.length; i++) { %>
+        <tr>
+          <td><%= list.movies[i].title %></td>
+          <td><%= list.movies[i].rating %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
 </div>
 <% include partials/footer %>

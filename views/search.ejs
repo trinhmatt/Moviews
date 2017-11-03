@@ -5,6 +5,7 @@
     <form method='POST' action='/search/<%= movie.results[i].title %>'>
       <button name='title' id='movie-title' value='<%= movie.results[i].title %>'><%= movie.results[i].title %></button>
       <input type='text' name='poster' style='display: none' value="https://image.tmdb.org/t/p/w300/<%= movie.results[i].poster_path %>"></input>
+      <input type='text' name='description' style='display: none' value='<%= movie.results[i].overview %>'></input>
     </form>
   <% }%>
 </div>

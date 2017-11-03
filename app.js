@@ -1,4 +1,7 @@
 //API KEY = 0e5bea19bca627a9999ab87fc9bb53f3
+//TO DO:
+  //Allow users to add ratings to the movies they save
+  //Change List schema so that when users add their ratings it saves it the DB
 var express = require('express'),
     app = express(),
     mongoose = require('mongoose'),
@@ -70,10 +73,12 @@ app.get('/home/:id', function(req, res){
   })
 })
 
+//TO ADD MOVIE TO LIST
 app.put('/home/:id', function(req, res){
   var movie = {
     title: req.body.title,
-    poster: req.body.poster
+    poster: req.body.poster,
+    rating: req.body.rating
   }
   User.findById(req.params.id, function(err, foundUser){
     if (!err) {
@@ -95,7 +100,7 @@ app.put('/home/:id', function(req, res){
 app.post('/register', function(req, res){
   var username = new User({username:req.body.username}),
       password = req.body.password;
-
+//Creates user and if succesful, creates a list associated with new user
   User.register(username, password, function(err, user){
     if (err){
       console.log(err)
@@ -136,7 +141,8 @@ app.post('/search', function(req, res){
 app.post('/search/:title', function(req, res){
   var movie = {
     title: req.body.title,
-    poster: req.body.poster
+    poster: req.body.poster,
+    desc: req.body.description
   }
   res.render('show', {movie: movie})
 })

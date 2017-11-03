@@ -1,9 +1,15 @@
 <% include partials/header %>
-<h1><%= movie.title %></h1>
-<img src='<%= movie.poster %>'></img>
-<form method='POST' action='/home/<%= currentUser._id %>?_method=PUT'>
-  <input type='text' name='title' value='<%= movie.title %>' style:'display: none'></input>
-  <input type='text' name='poster' value='<%= movie.poster %>' style:'display: none'></input>
-  <button class='btn btn-success btn-lg'>Add to list</button>
-</form>
+<div class='container'>
+  <h1><%= movie.title %></h1>
+  <img src='<%= movie.poster %>'></img>
+  <p><%= movie.desc %></p>
+  <% if (currentUser) { %>
+    <form method='POST' action='/home/<%= currentUser._id %>?_method=PUT' id='add-form'>
+      <input type='text' name='title' value='<%= movie.title %>' class='no-display-input'></input>
+      <input type='text' name='poster' value='<%= movie.poster %>' class='no-display-input'></input>
+      <input type='text' name='rating' pattern="[0-9]{1,2}"></input>
+      <button class='btn btn-success btn-lg' id='add-to-list'>Add to list</button>
+    </form>
+  <% } %>
+</div>
 <% include partials/footer %>
