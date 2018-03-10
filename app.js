@@ -97,6 +97,27 @@ app.put('/home/:id', function(req, res){
   })
 })
 
+//TO DELETE MOVIE FROM LIST
+app.delete('/home/:id/delete/:movie', function(req, res) {
+  User.findById(req.params.id, function(err, foundUser){
+    if (!err) {
+      var searchUser = {
+        id: foundUser._id,
+        username: foundUser.username
+      }
+      List.findOneAndUpdate({owner: searchUser}, {$pull: {"movies": {_id: req.params.movie}}}, {new:true}, function(err, updatedList){
+        if (err) {
+          console.log('update failed')
+        } else {
+          res.render('profile',{list:updatedList, user:foundUser})
+        }
+      })
+    } else {
+      console.log('did not find')
+    }
+  })
+})
+
 app.post('/register', function(req, res){
   var username = new User({username:req.body.username}),
       password = req.body.password;

@@ -7,7 +7,18 @@
     <form method='POST' action='/home/<%= currentUser._id %>?_method=PUT' id='add-form'>
       <input type='text' name='title' value='<%= movie.title %>' class='no-display-input'></input>
       <input type='text' name='poster' value='<%= movie.poster %>' class='no-display-input'></input>
-      <input type='text' name='rating' pattern="[0-9]{1,2}"></input>
+      <select name='rating'>
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option value='5'>5</option>
+        <option value='6'>6</option>
+        <option value='7'>7</option>
+        <option value='8'>8</option>
+        <option value='9'>9</option>
+        <option value='10'>10</option>
+      </select>
       <button class='btn btn-success btn-lg' id='add-to-list'>Add to list</button>
     </form>
   <% } %>

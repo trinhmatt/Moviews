@@ -10,11 +10,19 @@
         <th>
           Rating
         </th>
+        <th>
+          Delete
+        </th>
       </tr>
       <% for (i=0; i<list.movies.length; i++) { %>
         <tr>
           <td><%= list.movies[i].title %></td>
           <td><%= list.movies[i].rating %></td>
+          <td>
+            <form action='/home/<%= user._id %>/delete/<%= list.movies[i]._id %>?_method=DELETE' method='POST'>
+              <button>Delete</button>
+            </form>
+          </td>
         </tr>
       <% } %>
     </tbody>
