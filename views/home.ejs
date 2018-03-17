@@ -1,12 +1,13 @@
 <% include partials/header %>
-<div class='container'>
-  <div class='row'>
-    <div class='col-lg-4'>
-      <h1>Homepage</h1>
-      <form method='POST' action='/search'>
-        <input type='text' placeholder="Search for movie" name='movie'></input>
-        <button class='btn btn-primary btn-sm'>Search</button>
-      </form>
+<div id='main'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-lg-4' id='homepage-main'>
+        <form method='POST' action='/search' style='display: grid'>
+          <input id='movie-search' type='text' placeholder="Search for movie" name='movie'></input>
+          <button class='btn btn-success btn-lg'>Search</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>

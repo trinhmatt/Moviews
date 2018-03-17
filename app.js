@@ -1,7 +1,3 @@
-
-//TO DO:
-  //Allow users to add ratings to the movies they save
-  //Change List schema so that when users add their ratings it saves it the DB
 var express = require('express'),
     app = express(),
     mongoose = require('mongoose'),
@@ -153,7 +149,7 @@ app.post('/search', function(req, res){
   request(apiURL, function(error, response, body){
     if (!error && response.statusCode == 200) {
       var info = JSON.parse(body)
-      res.render('search', {movie: info})
+      res.render('search', {movie: info, query: movie})
     }
   })
 })

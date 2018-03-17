@@ -1,7 +1,40 @@
+html {
+  height: 100%;
+}
+
+a {
+  color: white;
+}
+
+body {
+  height: 100%;
+}
+
+/*
+HEADER
+*/
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default {
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+}
+
 .navbar-item.auth {
     float: right;
     padding: 15px;
 }
+
+.navbar {
+  margin: 0;
+}
+
+/*
+LOGIN
+*/
 
 #login {
     margin: 0 auto;
@@ -11,4 +44,50 @@
 
 .no-display-input {
   display: none;
+}
+
+/*
+HOMEPAGE
+*/
+
+#homepage-main {
+  margin: 15% auto;
+  text-align: center;
+  float: none;
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+  background: url(../img/homepage-background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#movie-search {
+  width: 30vw;
+  border-radius: 0.5em;
+  border: none;
+  outline: none;
+  padding: 2%;
+  background: #adadad;
+}
+
+#movie-search::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+#movie-search:hover {
+  background: #c9c5c5
+}
+
+#movie-search:focus {
+  background: white;
+}
+
+#movie-search:focus::placeholder {
+  color: #c9c5c5;
+  opacity: 1;
 }
