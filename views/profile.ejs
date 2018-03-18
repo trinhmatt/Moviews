@@ -1,31 +1,33 @@
 <% include partials/header %>
 <div class='container'>
-  <h1><%= user.username %></h1>
-  <table>
-    <tbody id='table'>
-      <tr>
-        <th onclick="titleSort()">
-          Title
-        </th>
-        <th id='profile-rating' onclick="ratingsSort()">
-          Rating
-        </th>
-        <th>
+  <div id='profile'>
+    <h1><%= user.username %></h1>
+    <table>
+      <tbody id='table'>
+        <tr>
+          <th class='profile-table-header' onclick="titleSort()">
+            Title
+          </th>
+          <th class='profile-table-header' onclick="ratingsSort()">
+            Rating
+          </th>
+          <th>
 
-        </th>
-      </tr>
-      <% for (i=0; i<list.movies.length; i++) { %>
-        <tr class='table-row'>
-          <td class='list-title'><%= list.movies[i].title %></td>
-          <td class='list-rating'><%= list.movies[i].rating %></td>
-          <td>
-            <form action='/home/<%= user._id %>/delete/<%= list.movies[i]._id %>?_method=DELETE' method='POST'>
-              <button>Delete</button>
-            </form>
-          </td>
+          </th>
         </tr>
-      <% } %>
-    </tbody>
-  </table>
+        <% for (i=0; i<list.movies.length; i++) { %>
+          <tr class='table-row'>
+            <td class='list-title'><%= list.movies[i].title %></td>
+            <td class='list-rating'><%= list.movies[i].rating %></td>
+            <td>
+              <form action='/home/<%= user._id %>/delete/<%= list.movies[i]._id %>?_method=DELETE' method='POST'>
+                <button class='btn btn-danger btn-sm'>Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
 </div>
 <% include partials/footer %>

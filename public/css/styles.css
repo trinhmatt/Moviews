@@ -8,6 +8,8 @@ a {
 
 body {
   height: 100%;
+  width: 100%;
+  background-color: #d8d8d8;
 }
 
 /*
@@ -28,9 +30,18 @@ HEADER
     padding: 15px;
 }
 
+
+
+.navbar-item.auth a:hover {
+  text-decoration: none;
+  color: #5e5e5e;
+}
+
 .navbar {
   margin: 0;
 }
+
+
 
 /*
 LOGIN
@@ -90,4 +101,96 @@ HOMEPAGE
 #movie-search:focus::placeholder {
   color: #c9c5c5;
   opacity: 1;
+}
+
+/*
+SEARCH RESULTS
+*/
+
+#search-results {
+  width: 80%;
+  margin: 2% auto;
+  background: white;
+  border-radius: 0.5em;
+  padding: 2%;
+  padding-top: 0;
+  border: 1px solid #d3d3d3;
+}
+
+#search-results h1 {
+  padding-bottom: 1%;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.movie-title {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 1%;
+  border-radius: 0.5em;
+}
+
+.movie-title:hover {
+  background: #e5e5e5;
+}
+
+/*
+MOVIE-SHOW-PAGE
+*/
+
+#movie-show-page {
+  margin-top: 2%;
+  background: white;
+  border-radius: 0.5em;
+  padding: 2%;
+  padding-top: 0;
+  padding-top: 0;
+  border: 1px solid #d3d3d3;
+}
+
+#movie-show-page h1 {
+  padding-top: 0;
+  padding-bottom: 1%;
+  border-bottom: 1px solid #eaeaea;
+}
+
+#movie-show-page p {
+  margin-top: 2%;
+}
+
+/*
+PROFILE PAGE
+*/
+
+#profile {
+  margin: 5% auto;
+  background: white;
+  border-radius: 0.5em;
+  display: table;
+  padding: 2%;
+  padding-top: 0;
+  min-width: 50%;
+}
+
+#profile table {
+  margin-left: 25%;
+  text-align: none;
+}
+
+#profile h1 {
+  text-align: center;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1%;
+}
+
+.list-title {
+  padding-right: 1%;
+}
+
+.profile-table-header {
+  cursor: pointer;
+}
+
+.profile-table-header:hover {
+  color: #5e5e5e;
 }

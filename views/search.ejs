@@ -1,14 +1,16 @@
 <% include partials/header %>
 <div class='container'>
-  <h1>Search results for '<%= query %>'</h1>
-  <% for (i=0; i<movie.results.length; i++) { %>
-    <form method='POST' action='/search/<%= movie.results[i].title %>'>
-      <button name='title' id='movie-title' value='<%= movie.results[i].title %>'>
-        <%= movie.results[i].title + ' ' + '('+ movie.results[i].release_date.substring(0,4) + ')' %>
-      </button>
-      <input type='text' name='poster' style='display: none' value="https://image.tmdb.org/t/p/w300/<%= movie.results[i].poster_path %>"></input>
-      <input type='text' name='description' style='display: none' value='<%= movie.results[i].overview %>'></input>
-    </form>
-  <% }%>
+  <div id='search-results'>
+    <h1>Search results for '<%= query %>'</h1>
+    <% for (i=0; i<movie.results.length; i++) { %>
+      <form method='POST' action='/search/<%= movie.results[i].title %>'>
+        <button name='title' class='movie-title' value='<%= movie.results[i].title %>'>
+          <%= movie.results[i].title + ' ' + '('+ movie.results[i].release_date.substring(0,4) + ')' %>
+        </button>
+        <input type='text' name='poster' style='display: none' value="https://image.tmdb.org/t/p/w300/<%= movie.results[i].poster_path %>"></input>
+        <input type='text' name='description' style='display: none' value='<%= movie.results[i].overview %>'></input>
+      </form>
+    <% }%>
+  </div>
 </div>
 <% include partials/footer %>
