@@ -1,11 +1,27 @@
-<% include partials/header %>
-<div class='container'>
-  <div class='row'>
-    <form method='POST' action='/register'>
-      <input type='text' placeholder="username" name='username'>
-      <input type='password' placeholder="password" name='password'>
-      <button class='btn btn-primary btn-sm'>Submit</button>
-    </form>
-  </div>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Moviews</title>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+  <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'></script>
+  <link rel='stylesheet' type='text/css' href='/css/styles.css'></link>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='row'>
+        <div class=user-form>
+          <h1>Register</h1>
+          <form method='POST' action='/register'>
+            <input type='text' placeholder="username" name='username'>
+            <input type='password' placeholder="password" name='password'>
+            <button class='btn btn-success btn-md'>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
 <% include partials/footer %>

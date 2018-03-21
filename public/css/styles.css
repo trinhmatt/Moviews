@@ -194,3 +194,56 @@ PROFILE PAGE
 .profile-table-header:hover {
   color: #5e5e5e;
 }
+
+/*
+LOGIN + REGISTER
+*/
+
+.user-form {
+  margin: 2% auto;
+  background: white;
+  border-radius: 0.5em;
+  padding: 2%;
+  padding-top: 0;
+  padding-top: 0;
+  border: 1px solid #d3d3d3;
+  width: 80%;
+}
+
+.user-form h1 {
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1%;
+  text-align: center;
+}
+
+.user-form form {
+  display: grid;
+}
+
+.user-form input {
+  border-radius: 0.5em;
+  border: none;
+  outline: none;
+  padding: 2%;
+  background: #adadad;
+  margin-bottom: 2%;
+}
+
+.user-form input::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.user-form input:hover {
+  background: #c9c5c5
+}
+
+.user-form input:focus {
+  background: white;
+  border: 1px solid #efefef;
+}
+
+.user-form input:focus::placeholder {
+  color: #c9c5c5;
+  opacity: 1;
+}

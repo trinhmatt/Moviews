@@ -10,7 +10,8 @@ var express = require('express'),
     List = require('./models/list.js'),
     LocalStrategy = require('passport-local');
 
-mongoose.connect('mongodb://localhost/moviews');
+// mongoose.connect('mongodb://localhost/moviews');
+mongoose.connect('mongodb://admin:password@ds111059.mlab.com:11059/moviews');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
@@ -37,15 +38,19 @@ app.use(function(req, res, next){
 });
 
 app.get('/', function(req, res){
-  res.render('landing')
+  res.render('home')
+})
+
+app.get('/home', function(req, res){
+  res.render('home')
 })
 
 app.get('/register', function(req, res){
   res.render('register')
 })
 
-app.get('/home', isLoggedIn, function(req, res){
-  res.render('home')
+app.get('/login', function(req, res){
+  res.render('login')
 })
 
 //USER SHOW PAGE
