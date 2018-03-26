@@ -54,7 +54,7 @@ app.get('/login', function(req, res){
 })
 
 //USER SHOW PAGE
-app.get('/home/:id', function(req, res){
+app.get('/home/:id', isLoggedIn, function(req, res){
   User.findById(req.params.id, function(err, foundUser){
     if (err) {
       console.log(err)
@@ -75,7 +75,7 @@ app.get('/home/:id', function(req, res){
 })
 
 //TO ADD MOVIE TO LIST
-app.put('/home/:id', function(req, res){
+app.put('/home/:id', isLoggedIn, function(req, res){
   var movie = {
     title: req.body.title,
     poster: req.body.poster,
@@ -91,7 +91,7 @@ app.put('/home/:id', function(req, res){
         if (err) {
           console.log(err)
         } else {
-          res.render('profile',{list:updatedList, user:foundUser})
+          res.redirect(`/home/${req.params.id}`)
         }
       })
     }
@@ -99,7 +99,7 @@ app.put('/home/:id', function(req, res){
 })
 
 //TO DELETE MOVIE FROM LIST
-app.delete('/home/:id/delete/:movie', function(req, res) {
+app.delete('/home/:id/delete/:movie', isLoggedIn, function(req, res) {
   User.findById(req.params.id, function(err, foundUser){
     if (!err) {
       var searchUser = {
@@ -108,9 +108,9 @@ app.delete('/home/:id/delete/:movie', function(req, res) {
       }
       List.findOneAndUpdate({owner: searchUser}, {$pull: {"movies": {_id: req.params.movie}}}, {new:true}, function(err, updatedList){
         if (err) {
-          console.log('update failed')
+          console.log(err)
         } else {
-          res.render('profile',{list:updatedList, user:foundUser})
+          res.redirect(`/home/${req.params.id}`)
         }
       })
     } else {

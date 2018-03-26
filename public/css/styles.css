@@ -222,7 +222,7 @@ LOGIN + REGISTER
 
 .user-form input {
   border-radius: 0.5em;
-  border: none;
+  border: 1px solid white;
   outline: none;
   padding: 2%;
   background: #adadad;
